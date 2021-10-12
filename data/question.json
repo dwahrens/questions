@@ -1,4 +1,4 @@
-{ 
+[{ 
 	"question": {
 		"answer_values": [
 				"Answer Value A",
@@ -12,4 +12,4 @@
 		"required": true,
 		"type": "Checkbox"
 	}
-}
+}]

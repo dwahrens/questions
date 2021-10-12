@@ -188,12 +188,14 @@
             .then((response) => { return response.json() })
             .then((data) => {
               console.log(data)
-              self.questions.push(data.question)
-              self.question = data.question
+              self.questions = data
+              self.question = data[0].question
               self.loading = false
+              self.$forceUpdate()
               // parse all of the questions into an array
               // display the questions
-            }).catch(error => { this.error = error })
+            })
+            .catch(error => { this.error = error })
         },
         editQuestion: (event) => {
           let id = Number(event.target.dataset.id)
@@ -219,7 +221,6 @@
       },
       mounted() {
         self = this
-        console.log('Getting Data')
         this.fetchData()
       }
     })
