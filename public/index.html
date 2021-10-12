@@ -128,7 +128,7 @@
                   <div class="field">
                     <div class="control">
                       <ul>
-                        <li class="pb-1 pt-1" v-for="(answer, index) in question.answer_values">
+                        <li class="pb-1 pt-1" v-for="(answer, index) in question.answer_values" :key="index">
                           {{ answer }}
                           <button class="button is-small is-danger ml-1" :data-index="index" v-on:click="deleteAnswer">Delete</button>
                         </li>
