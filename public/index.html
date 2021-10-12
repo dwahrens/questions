@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="public/css/bulma.min.css" />
+
+</head>
+
+<body>
+  <section id="vue">
+    <article class="hero is-dark is-bold">
+      <div class="hero-body">
+        <div class="container">
+          <h1 class="title is-size-2 has-text-centered">Questions</h1>
+          <hr>
+          <div v-if="loading" class="is-loading">
+
+          </div>
+          <div v-if="error" class="is-error">
+            {{ error }}
+          </div>
+          
+        </div>
+      </div>
+    </article>
+
+    <article class="hero is-light">
+      <div class="hero-body">
+        <div class="container">
+          
+        </div>
+      </div>
+    </article>
+  </section>
+  <script src="public/js/vue.js"></script>
+  <script>
+    let vue = new Vue({
+      el: '#vue',
+      data: {
+        chapterTitle: null,
+        chapterNumber: null,
+        chapterParagraphs: null,
+        id: 1,
+        loading: true,
+        error: false,
+      },
+      methods: {
+        fetchData: function () {
+          let self = this
+          const myRequest = new Request('/question/')
+
+          fetch(myRequest)
+            .then((response) => { return response.json() })
+            .then((data) => {
+              console.log(data)
+            }).catch(error => { this.error = error })
+        },
+        returnNothing: function () {
+          return
+        }
+      },
+      mounted() {
+        this.fetchData()
+      }
+    })
+  </script>
+</body>
+
+</html>
