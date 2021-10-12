@@ -1,7 +1,7 @@
 const dataPath = "./data/question.json";
 
 const questionRoutes = (app, fs) => {
-  app.get("/question", (req, res) => {
+  app.get("/questions", (req, res) => {
     fs.readFile(dataPath, "utf8", (err, data) => {
       if (err) {
         throw err

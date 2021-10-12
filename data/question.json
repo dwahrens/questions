@@ -1,14 +1,15 @@
-{ "question": {
-	"answer_values": [
-			"Answer Value A",
-			"Answer Value B",
-			"Answer Value C",
-			"Answer Value D",
-			"Answer Value E"
-	],
-	"question_text": "Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur?",
-	"question_display_text": "Neque porro quisquam est,...",
-	"required": true,
-	"type": "Checkbox"
+{ 
+	"question": {
+		"answer_values": [
+				"Answer Value A",
+				"Answer Value B",
+				"Answer Value C",
+				"Answer Value D",
+				"Answer Value E"
+		],
+		"question_text": "Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur?",
+		"question_display_text": "Neque porro quisquam est,...",
+		"required": true,
+		"type": "Checkbox"
 	}
 }
